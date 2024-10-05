@@ -1,5 +1,13 @@
 package assignment_2;
 
+import assignment_2.Assignment2.Adapter.PDFDocumentAdapter;
+import assignment_2.Assignment2.Bridge.HighlightRenderEngine;
+import assignment_2.Assignment2.Bridge.RenderEngine;
+import assignment_2.Assignment2.Bridge.SimpleRenderEngine;
+import assignment_2.Assignment2.Composite.DocumentGroup;
+import assignment_2.Assignment2.Document;
+import assignment_2.Assignment2.Facade.DocumentFacade;
+
 public class Main {
     public static void main(String[] args) {
 
