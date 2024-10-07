@@ -7,6 +7,7 @@ import assignment_2.Assignment2.Bridge.SimpleRenderEngine;
 import assignment_2.Assignment2.Composite.DocumentGroup;
 import assignment_2.Assignment2.Document;
 import assignment_2.Assignment2.Facade.DocumentFacade;
+import assignment_2.Assignment2.Flyweight.DocumentFactory;
 
 public class Main {
     public static void main(String[] args) {

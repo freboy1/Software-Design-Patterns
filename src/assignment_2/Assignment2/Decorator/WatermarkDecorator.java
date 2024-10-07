@@ -9,6 +9,11 @@ public class WatermarkDecorator extends DocumentDecorator {
     }
 
     // Задача: Реализуйте логику, которая сначала отображает документ, а затем добавляет к нему водяной знак.
+    @Override
+    public void display() {
+        super.display();
+        System.out.println("Adding watermark to the document.");
+    }
 }
 
 

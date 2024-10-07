@@ -11,5 +11,19 @@ public class DocumentGroup implements Document {
 
     // Задача: Реализуйте методы для добавления и удаления документов из группы,
     // а также отображение всех документов в группе через метод display().
+    public void addDocument(Document document) {
+        documents.add(document);
+    }
+
+    public void removeDocument(Document document) {
+        documents.remove(document);
+    }
+
+    @Override
+    public void display() {
+        for (Document document : documents) {
+            document.display();
+        }
+    }
 }
 

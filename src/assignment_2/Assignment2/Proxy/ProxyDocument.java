@@ -14,5 +14,12 @@ public class ProxyDocument implements Document {
 
     // Задача: Вам нужно реализовать логику для создания документа только при первом обращении к методу display().
     // Если документ уже был загружен, он не должен загружаться заново.
-
+    @Override
+    public void display() {
+        // Load the document only if it hasn't been loaded yet
+        if (realDocument == null) {
+            realDocument = new RealDocument(title);
+        }
+        realDocument.display();
+    }
 }
