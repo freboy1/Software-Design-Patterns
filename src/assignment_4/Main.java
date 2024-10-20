@@ -2,7 +2,7 @@ package assignment_4;
 
 import assignment_4.Assignment4.Observer.*;
 import assignment_4.Assignment4.State.*;
-
+import assignment_4.Assignment4.Strategy.*;
 public class Main {
     public static void main(String[] args) {
         //Observer
@@ -39,6 +39,24 @@ public class Main {
         player.stop(); // Воспроизведение остановлено.
         player.pause(); // Плеер остановлен. Нельзя поставить на паузу.
 
+        System.out.println();
+        //Strategy
+        double orderAmount = 1000.0; // Сумма заказа
 
+        // Создаем стратегии
+        PaymentStrategy cardPayment = new CardPaymentStrategy();
+        PaymentStrategy walletPayment = new WalletPaymentStrategy();
+        PaymentStrategy cashOnDelivery = new CashOnDeliveryStrategy();
+
+        // Создаем заказ с разными стратегиями оплаты
+        Order orderWithCard = new Order(cardPayment);
+        System.out.println("Итоговая сумма при оплате картой: " + orderWithCard.calculateTotalAmount(orderAmount));
+
+        Order orderWithWallet = new Order(walletPayment);
+        System.out.println("Итоговая сумма при оплате электронным кошельком: " + orderWithWallet.calculateTotalAmount(orderAmount));
+
+        Order orderWithCashOnDelivery = new Order(cashOnDelivery);
+        System.out.println("Итоговая сумма при наложенном платеже: " + orderWithCashOnDelivery.calculateTotalAmount(orderAmount));
+        System.out.println("Спасибо что используете Яндекс доставку");
     }
 }
