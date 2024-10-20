@@ -4,6 +4,7 @@ import assignment_4.Assignment4.Observer.*;
 import assignment_4.Assignment4.State.*;
 import assignment_4.Assignment4.Strategy.*;
 import assignment_4.Assignment4.Template_Method.*;
+import assignment_4.Assignment4.Visitor.*;
 public class Main {
     public static void main(String[] args) {
         //Observer
@@ -72,5 +73,27 @@ public class Main {
         QualityCheck electronicsCheck = new ElectronicsQualityCheck();
         System.out.println("Проверка качества электроники:");
         electronicsCheck.checkProduct();
+
+        System.out.println();
+        //Visitor
+
+        // Создаем файлы
+        File textFile = new TextFile("document.txt");
+        File executableFile = new ExecutableFile("program.exe");
+
+        // Создаем посетителей
+        Visitor antivirus = new AntivirusVisitor();
+        Visitor reportGenerator = new ReportVisitor();
+
+        // Запускаем проверку антивирусом
+        System.out.println("Проверка файлов:");
+        textFile.accept(antivirus);
+        executableFile.accept(antivirus);
+        System.out.println();
+
+        // Генерируем отчёт о проверке
+        System.out.println("Генерация отчёта о проверке:");
+        textFile.accept(reportGenerator);
+        executableFile.accept(reportGenerator);
     }
 }
