@@ -3,6 +3,7 @@ package assignment_4;
 import assignment_4.Assignment4.Observer.*;
 import assignment_4.Assignment4.State.*;
 import assignment_4.Assignment4.Strategy.*;
+import assignment_4.Assignment4.Template_Method.*;
 public class Main {
     public static void main(String[] args) {
         //Observer
@@ -58,5 +59,18 @@ public class Main {
         Order orderWithCashOnDelivery = new Order(cashOnDelivery);
         System.out.println("Итоговая сумма при наложенном платеже: " + orderWithCashOnDelivery.calculateTotalAmount(orderAmount));
         System.out.println("Спасибо что используете Яндекс доставку");
+
+        System.out.println();
+        //Template Method
+        // Проверка качества продуктов питания
+        QualityCheck foodCheck = new FoodQualityCheck();
+        System.out.println("Проверка качества продукта питания:");
+        foodCheck.checkProduct();
+        System.out.println();
+
+        // Проверка качества электроники
+        QualityCheck electronicsCheck = new ElectronicsQualityCheck();
+        System.out.println("Проверка качества электроники:");
+        electronicsCheck.checkProduct();
     }
 }
